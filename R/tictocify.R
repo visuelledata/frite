@@ -32,21 +32,21 @@ tictocify <- function(..f, tic_args = NULL, toc_args = NULL) {
 
   # Error checking
   assert_that(is.function(..f))
-  assert_that(!is.primitive(..f), msg = "..f can't be a primitive function.")
-  if (!is.null(tic_args)) assertthat::assert_that(is.list(tic_args))
-  if(!is.null(toc_args)) assertthat::assert_that(is.list(toc_args))
+  assert_not_primitive(..f)
+  if (!is.null(tic_args)) assert_that(is.list(tic_args))
+  if(!is.null(toc_args)) assert_that(is.list(toc_args))
 
   # Creates a wrapper function for ..f which will call ..f and give its execution time
   int_f <- function() {
     ifelse(is.null(tic_args),
-           tictoc::tic(),
-           do.call(tictoc::tic, tic_args))
+           tic(),
+           do.call(tic, tic_args))
 
-    x <- do.call(..f, map(names(formals(..f)), as.name))
+    x <- do.call(..f, map(.x = names(formals(..f)), .f = as.name))
 
     ifelse(is.null(toc_args),
-           tictoc::toc(),
-           do.call(tictoc::toc, toc_args))
+           toc(),
+           do.call(toc, toc_args))
     return(x)
   }
 

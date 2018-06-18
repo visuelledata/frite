@@ -26,7 +26,7 @@ find_call_piped <- function(.piped) {
 
   # Returns the last environment in which 'chain_parts' exists
   env <- pipe_env(1:sys.nframe(),
-                  pryr::f(.n, !('chain_parts' %in% ls(envir=parent.frame(.n)))))
+                  f(.n, !('chain_parts' %in% ls(envir=parent.frame(.n)))))
 
   # Returns the code at the top of the pipe chain, if no pipes then returns .piped code
   if (exists('chain_parts', env)) {

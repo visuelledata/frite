@@ -1,9 +1,4 @@
-#Remove the last return line and make a insert_return function
-#Add an argument to allow naming 'return_val'
-#Edit commented code on bottom
 #Add documentation ='(
-#Make a line_wrap function
-#Rename all functions to line_....
 
 line_assign <- function(.f, line, assign_to){
 
@@ -18,17 +13,17 @@ line_assign <- function(.f, line, assign_to){
     as.call()
 
 
-  int_f <- line_insert(.f, line - 1, changed_line)
-  return(int_f)
+  line_insert(.f, line - 1, changed_line)
+
 }
 
 
-# timed_map <- line_insert(map, 1, quote(tic())) %>%
+# timed_map <- map %>%
+#   line_insert(1, quote(tic())) %>%
 #   line_insert(15, quote(toc())) %>%
-#   line_assign(4, c('a','b')) %>%
-#   line_insert(line = 9999, quote(return(a)))
+#   line_assign(4, 'a') %>%
+#   line_insert(after_line = 9999, quote(return(a)))
 #
 # map_timed <- tictocify(map)
 #
-# set.seed(1)
-# is.output.same(map(1:100000, sqrt), map_timed, timed_map)
+# is.output.same(map(1:1000000, sqrt), timed_map, map_timed)
