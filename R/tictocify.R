@@ -31,8 +31,8 @@
 tictocify <- function(..f, tic_args = NULL, toc_args = NULL) {
 
   # Error checking
-  assertthat::assert_that(is.function(..f))
-  assertthat::assert_that(!is.primitive(..f), msg = "..f can't be a primitive function.")
+  assert_that(is.function(..f))
+  assert_that(!is.primitive(..f), msg = "..f can't be a primitive function.")
   if (!is.null(tic_args)) assertthat::assert_that(is.list(tic_args))
   if(!is.null(toc_args)) assertthat::assert_that(is.list(toc_args))
 
@@ -54,3 +54,6 @@ tictocify <- function(..f, tic_args = NULL, toc_args = NULL) {
   formals(int_f) <- formals(..f)
   return(int_f)
 }
+
+
+

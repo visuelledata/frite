@@ -2,12 +2,11 @@ copy_args <- function(from, to) {
 
   assert_that(is.function(from),
               is.function(to))
-  assert_that(!is.primitive(from),
-              !is.primitive(to),
-              msg = "Can't use primitive functions")
+  assert_not_primitive(from, to)
 
   int_f <- to
   formals(int_f) <- formals(from)
+
   return(int_f)
 }
 

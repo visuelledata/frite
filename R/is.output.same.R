@@ -38,6 +38,7 @@ is.output.same <- function(.call, ..., quiet = FALSE) {
     else .call <- find_call_piped(.call)
 
   # Error checking
+  .call_value <- eval(.call)
   if (!all(map_lgl(list(...), is.function))) stop('An optional argument is not a function.')
   if (missing(...)) stop('Need at least 1 optional argument.')
 
@@ -52,6 +53,6 @@ is.output.same <- function(.call, ..., quiet = FALSE) {
          return(.x)
         }) %>%
     map(eval) %>%
-    map_lgl(identical, x = eval(.call)) %>%
+    map_lgl(identical, x = .call_value) %>%
     all()
 }
