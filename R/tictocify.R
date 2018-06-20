@@ -15,7 +15,7 @@
 #'
 #' @seealso [is.output.same()]
 #'
-#' @examples
+#' @example
 #'
 #' set.seed(1)
 #' stuff <- rnorm(n = 100000)
@@ -36,7 +36,7 @@ tictocify <- function(..f, tic_args = NULL, toc_args = NULL) {
   if (!is.null(tic_args)) assert_that(is.list(tic_args))
   if(!is.null(toc_args)) assert_that(is.list(toc_args))
 
-  # Creates a wrapper function for ..f which will call ..f and give its execution time
+  # Creates a wrapper function for a call of ..f
   int_f <- function() {
     ifelse(is.null(tic_args),
            tic(),
@@ -50,7 +50,7 @@ tictocify <- function(..f, tic_args = NULL, toc_args = NULL) {
     return(x)
   }
 
-  # Makes the arguments of the returned function identical to the original
+  # Makes the arguments of int_f identical to the ..f
   formals(int_f) <- formals(..f)
   return(int_f)
 }

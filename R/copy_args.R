@@ -1,3 +1,17 @@
+#' Copies the arguments of one function to another
+#'
+#' You can use this when you want to create a function very similar to the original and
+#' retroactively define the arguments.
+#'
+#' @param from A function with the arguments to copy
+#' @param to A function to receive new arguments
+#'
+#' @return function
+#'
+#' @seealso See tictocify() function body for a use case.
+#'
+
+
 copy_args <- function(from, to) {
 
   assert_that(is.function(from),
@@ -10,9 +24,3 @@ copy_args <- function(from, to) {
   return(int_f)
 }
 
-# is.args.same(iris, map_timed)
-# source('R/tictocify.R')
-# map_timed <- tictocify(map)
-# is.args.same(map, map_timed)
-#
-# copy_args(map, compose)

@@ -15,7 +15,7 @@
 #'  operates off the fact that calls given inside of function calls function are promises,
 #'  allowing the code to be wrapped in substitute() within the function.
 #'
-#' @return TRUE or FALSE
+#' @return logical - TRUE if outputs are identical
 #'
 #' @seealso [find_call_piped()]
 #'
