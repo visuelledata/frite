@@ -10,7 +10,7 @@
 #'
 #' @seealso [list_body()]
 #'
-#' @example
+#' @examples
 #'
 #' line_remove(.f = map, line = 2)
 #' line_remove(.f = map, line = 3)
@@ -20,8 +20,9 @@ line_remove <- function(.f, line) {
   # Error checking
   assert_that(is.function(.f), is.number(line))
   assert_not_primitive(.f)
+  assert_that(line %% 1 == 0, line >= 2,
+              msg = "line must be a positive integer greater than 1")
   if (line > length(list_body(.f))) stop(paste("There is no 'line'", line))
-  if(line <= 1) stop("'line' must be a positive integer greater than 1")
 
   # Creates an identical function to .f, then removes a line from it
   int_f <- .f
@@ -30,7 +31,3 @@ line_remove <- function(.f, line) {
 
   return(int_f)
 }
-
-
-
-

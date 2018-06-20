@@ -34,18 +34,18 @@
 is.output.same <- function(.call, ..., quiet = FALSE) {
 
   # Optional warning
-  if(quiet == TRUE) suppressWarnings(.call <- find_call_piped(.call))
+  if (quiet == TRUE) suppressWarnings(.call <- find_call_piped(.call))
     else .call <- find_call_piped(.call)
 
   # Error checking
   .call_value <- eval(.call)
-  if (!all(map_lgl(list(...), is.function))) stop('An optional argument is not a function.')
-  if (missing(...)) stop('Need at least 1 optional argument.')
+  if (!all(map_lgl(list(...), is.function))) stop("... should be functions")
+  if (missing(...)) stop("Need at least 1 optional argument.")
 
   # Makes list of function names
   f_names <- eval(substitute(alist(...)))
 
-  # Creates new function calls, then evaluates them against .call and checks output
+  # Creates function calls, evaluates them against .call, checks output
   map2(rep(list(.call), length(f_names)),
        f_names,
        function(.x, .y, i) {

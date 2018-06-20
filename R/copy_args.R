@@ -14,8 +14,8 @@
 
 copy_args <- function(from, to) {
 
-  assert_that(is.function(from),
-              is.function(to))
+  # Error checking
+  assert_that(is.function(from), is.function(to))
   assert_not_primitive(from, to)
 
   int_f <- to
@@ -23,4 +23,3 @@ copy_args <- function(from, to) {
 
   return(int_f)
 }
-

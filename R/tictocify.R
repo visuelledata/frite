@@ -15,7 +15,7 @@
 #'
 #' @seealso [is.output.same()]
 #'
-#' @example
+#' @examples
 #'
 #' set.seed(1)
 #' stuff <- rnorm(n = 100000)
@@ -34,7 +34,7 @@ tictocify <- function(..f, tic_args = NULL, toc_args = NULL) {
   assert_that(is.function(..f))
   assert_not_primitive(..f)
   if (!is.null(tic_args)) assert_that(is.list(tic_args))
-  if(!is.null(toc_args)) assert_that(is.list(toc_args))
+  if (!is.null(toc_args)) assert_that(is.list(toc_args))
 
   # Creates a wrapper function for a call of ..f
   int_f <- function() {
@@ -54,6 +54,3 @@ tictocify <- function(..f, tic_args = NULL, toc_args = NULL) {
   formals(int_f) <- formals(..f)
   return(int_f)
 }
-
-
-

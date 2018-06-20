@@ -12,7 +12,7 @@
 #'
 #' @seealso [line_remove()] [line_insert()]
 #'
-#' @example
+#' @examples
 #'
 #' map %>%
 #'   line_assign(line = 2, assign_to = 'abc') %>%
@@ -23,20 +23,19 @@ line_assign <- function(.f, line, assign_to){
 
   # Error Checking
   assert_not_primitive(.f)
-  assert_that(is_scalar_character(assign_to), msg = 'assign_to is not a single string')
-  if(line <= 1) stop("'line' must be a positive integer greater than 1")
+  assert_that(is_scalar_character(assign_to),
+              msg = "assign_to is not a single string")
+  assert_that(line >= 2, line %% 1 == 0,
+              msg = "line must be a positive integer greater than 1")
   if (line > length(list_body(.f))) stop(paste("There is no 'line'", line))
 
   # Extracts an expression from function body and wraps it in assign
   changed_line <-
     list_body(.f)[line] %>%
-    c(as.name('assign'), assign_to,  .) %>%
+    c(as.name("assign"), assign_to,  .) %>%
     as.call()
 
   # Removes the extracted expression and inserts modified expression
   line_remove(.f, line) %>%
     line_insert(line - 1, changed_line)
-
 }
-
-

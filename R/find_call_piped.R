@@ -10,7 +10,7 @@
 #'
 #' @return call
 #'
-#' @example
+#' @examples
 #' sum(1:3) %>%
 #'   identity() %>%
 #'   is.na() %>%
@@ -26,10 +26,10 @@ find_call_piped <- function(.piped) {
 
   # Returns the last environment in which 'chain_parts' exists
   env <- pipe_env(1:sys.nframe(),
-                  f(.n, !('chain_parts' %in% ls(envir=parent.frame(.n)))))
+                  function(.n) !("chain_parts" %in% ls(envir = parent.frame(.n))))
 
-  # Returns the code at the top of the pipe chain, if no pipes then returns .piped code
-  if (exists('chain_parts', env)) {
+  # Returns code at top of the pipe chain, returns .piped code if nothing piped
+  if (exists("chain_parts", env)) {
     warning("You have undone the evaluation of the pipe")
     return(env$chain_parts$lhs)
   } else {

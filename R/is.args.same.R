@@ -6,6 +6,7 @@
 #' @return logical - TRUE if arguments are identical
 #'
 is.args.same <- function(.f1, .f2) {
+
   # Error checking
   assert_that(is.function(.f1), is.function(.f2))
 
@@ -26,12 +27,10 @@ assert_not_primitive <- function(...) {
   f_list <- list(...)
 
   # Checks if all optional arguments are functions
-  map(f_list, f(Argument, assert_that(is.function(Argument))))
+  map_lgl(f_list, function(Argument) assert_that(is.function(Argument)))
 
   # Checks optional arguments for primitive functions
   map_lgl(f_list,
-          f(x, assert_that(!is.primitive(x),
-                           msg = 'Primitive functions are invalid arguments'))
-          ) %>%
-    all()
+          function(x) assert_that(!is.primitive(x),
+                            msg = "Primitive functions are invalid arguments"))
 }

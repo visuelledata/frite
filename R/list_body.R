@@ -8,8 +8,7 @@
 #' @return A list
 #'
 #' @example
-#'
-#' list_body(accumulate)
+#' list_body(strwrap)
 #'
 list_body <- function(.f) {
   assert_that(is.function(.f))
@@ -17,5 +16,3 @@ list_body <- function(.f) {
 
   as.list(body(.f))
 }
-
-
