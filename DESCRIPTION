@@ -21,6 +21,4 @@ Depends:
     R (>= 3.5.0)
 BugReports: https://github.com/visuelledata/frite/issues
 RoxygenNote: 6.0.1
-Suggests: knitr,
-    rmarkdown
 VignetteBuilder: knitr
