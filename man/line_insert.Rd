@@ -25,5 +25,5 @@ map_hello <- line_insert(map, 1, quote(print('Hello!')))
 
 }
 \seealso{
-[list_body()] [line_insert()] [line_remove()]
+\code{\link{list_body}} \code{\link{line_insert}} \code{\link{line_remove}}
 }

@@ -17,7 +17,7 @@
 #'
 #' @return logical - TRUE if outputs are identical
 #'
-#' @seealso [find_call_piped()]
+#' @seealso \code{\link{find_call_piped}}
 #'
 #' @examples
 #'

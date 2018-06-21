@@ -25,5 +25,5 @@ line_remove(.f = map, line = 3)
 
 }
 \seealso{
-[list_body()]
+\code{\link{list_body}}
 }

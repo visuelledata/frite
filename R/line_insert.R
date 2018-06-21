@@ -8,7 +8,7 @@
 #'
 #' @return function
 #'
-#' @seealso [list_body()] [line_insert()] [line_remove()]
+#' @seealso \code{\link{list_body}} \code{\link{line_insert}} \code{\link{line_remove}}
 #'
 #' @examples
 #'

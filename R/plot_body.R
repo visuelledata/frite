@@ -4,26 +4,28 @@
 #' in this package. It is pipeable and will return the function that you put into it.
 #'
 #' @param .f A function
-#' @param spacing Specifies space between lines, positive number
+#' @param nudge_y Moves the function body up or down, number
 #' @param font_size Specifies text size, positive number
 #' @param line_width Specifies the line width, positive number
 #'
-#' @return text in plot window and function
+#' @section Warning:
+#' Functions with large bodies will be difficult to plot correctly
 #'
-#' @seealso [list_body()]
+#' @return text in plot window, also returns function
+#'
+#' @seealso \code{\link{list_body}}
 #'
 #' @examples
 #'
 #' plot_body(map)
-#' plot_body(cross, spacing = .0872, font_size = .54, line_width = 100)
+#' plot_body(cross)
 #'
-plot_body <- function(.f, spacing = .15, font_size = .8, line_width = 80) {
+plot_body <- function(.f, nudge_y = 0, font_size = .8, line_width = 110) {
 
   # Error checking
   assert_that(is.function(.f),
-              is.number(spacing), is.number(font_size), is.number(line_width))
-  map_lgl(.x = list(spacing, font_size, line_width),
-          function(x) assert_that(.x > 0, msg = "Negative numbers are invalid"))
+              is.number(nudge_y), is.number(font_size), is.number(line_width))
+  assert_that(font_size > 0, line_width > 0)
 
   plot.new()
 
@@ -33,15 +35,19 @@ plot_body <- function(.f, spacing = .15, font_size = .8, line_width = 80) {
     as.character()
   list_f <- list_f %>%
     paste0("Line ", 1:length(list_f), ":    ", .) %>%
-    stringr::str_wrap(width = line_width, exdent = 16)
+    stringr::str_wrap(width = line_width, exdent = 16) %>%
+    stringr::str_c(collapse = "\n")
 
-  # Plots the title
-  text(-.05, 1.02, labels = paste0(substitute(.f), "()", "'s ", "function body",
-                                   " as a list"), pos = 4)
+  if (stringr::str_length(list_f) > 2600)
+    warning('All lines may not be plotted, adjust args')
 
-  # Plots the text
-  map2(seq(.96, 0, by = -spacing)[1:length(list_f)], list_f,
-       f(x, y, text(-.05, x, y, pos = 4, cex = font_size)))
+  # Plots the title, then body
+  text(-.15, 1.15 - nudge_y,
+       labels = paste0(substitute(.f), "()", "'s ", "function body"," as a list"),
+       pos = 4, xpd = TRUE)
+  text(x = -.15, y = .4 - nudge_y,
+       labels = list_f, cex = font_size,
+       pos = 4, xpd = TRUE)
 
   return(.f)
 }

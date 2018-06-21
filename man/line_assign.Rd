@@ -9,7 +9,7 @@ line_assign(.f, line, assign_to)
 \arguments{
 \item{.f}{A non-primitive function}
 
-\item{line}{The expression number of the function to assign}
+\item{line}{An expression from the body of the function}
 
 \item{assign_to}{The name of the variable to assign to, as a string}
 }
@@ -30,5 +30,5 @@ map \%>\%
 
 }
 \seealso{
-[line_remove()] [line_insert()]
+\code{\link{line_remove}} \code{\link{line_insert}}
 }

@@ -19,5 +19,5 @@ You can use this when you want to create a function very similar to the original
 retroactively define the arguments.
 }
 \seealso{
-See tictocify() function body for a use case.
+See \code{\link{tictocify}} function body for a use case.
 }

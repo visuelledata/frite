@@ -1,0 +1,52 @@
+---
+title: "Getting started with frite"
+author: "Christopher Peralta"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+#Introduction
+
+**frite** is a package that enables us to easily write and modify functions. It can be used to inject, assign, or remove code in a function.  There are also functions that enable you to use this package more easily. You can use the diagnostic functions to test any function that you can think of. 
+
+
+#The functions
+
+Diagnostic
+  * `tictocify` *returns a nearly identical timed version of its input*
+  * `is.output.same` *performs call on multiple functions and sees if they match*
+  
+Modification
+  * `line_assign` *inserts `assign()` into a function*
+  * `line_insert` *inserts code into a function*
+  * `line_remove` *removes code from a function*
+  * `copy_args` *copies the arguments of one function to another*
+  
+Helping
+  * `list_body` *converts function body to a list*
+  * `plot_body` *plots `list_body()` so you can inspect the body*
+
+
+
+
+## Figures
+
+The figure sizes have been customised so that you can easily put two images side-by-side. 
+
+```{r, fig.show='hold'}
+plot(1:10)
+plot(10:1)
+```
+
+
+

@@ -42,5 +42,5 @@ mean(1:3) \%>\%                            # FALSE
 
 }
 \seealso{
-[find_call_piped()]
+\code{\link{find_call_piped}}
 }

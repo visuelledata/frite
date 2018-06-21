@@ -8,7 +8,7 @@
 #'
 #' @return function
 #'
-#' @seealso See tictocify() function body for a use case.
+#' @seealso See \code{\link{tictocify}} function body for a use case.
 #'
 
 

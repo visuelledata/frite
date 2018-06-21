@@ -4,30 +4,35 @@
 \alias{plot_body}
 \title{Plots the body of a non-primitive function}
 \usage{
-plot_body(.f, spacing = 0.15, font_size = 0.8, line_width = 80)
+plot_body(.f, nudge_y = 0, font_size = 0.8, line_width = 110)
 }
 \arguments{
 \item{.f}{A function}
 
-\item{spacing}{Specifies space between lines, positive number}
+\item{nudge_y}{Moves the function body up or down, number}
 
 \item{font_size}{Specifies text size, positive number}
 
 \item{line_width}{Specifies the line width, positive number}
 }
 \value{
-text in plot window and function
+text in plot window, also returns function
 }
 \description{
 Plots the body of a function so that you can easily see it while using other functions
 in this package. It is pipeable and will return the function that you put into it.
 }
+\section{Warning}{
+
+Functions with large bodies will be difficult to plot correctly
+}
+
 \examples{
 
 plot_body(map)
-plot_body(cross, spacing = .0872, font_size = .54, line_width = 100)
+plot_body(cross)
 
 }
 \seealso{
-[list_body()]
+\code{\link{list_body}}
 }

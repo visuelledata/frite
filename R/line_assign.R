@@ -4,13 +4,12 @@
 #' It can be used with line_insert() to modify what a function returns, add additional
 #' conditional statements, and add more to already existing functions.
 #'
-#' @param .f A non-primitive function
-#' @param line The expression number of the function to assign
+#' @inheritParams line_remove
 #' @param assign_to The name of the variable to assign to, as a string
 #'
 #' @return function
 #'
-#' @seealso [line_remove()] [line_insert()]
+#' @seealso \code{\link{line_remove}} \code{\link{line_insert}}
 #'
 #' @examples
 #'

@@ -13,7 +13,7 @@
 #'
 #' @return function
 #'
-#' @seealso [is.output.same()]
+#' @seealso \code{\link{is.output.same}}
 #'
 #' @examples
 #'

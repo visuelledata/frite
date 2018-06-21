@@ -13,7 +13,6 @@ is.args.same <- function(.f1, .f2) {
   identical(formals(.f1), formals(.f2))
 }
 
-
 #' Checks if arguments are primitive functions
 #'
 #' @details Wrapper for assertthat::assert_that()

@@ -39,5 +39,5 @@ is.output.same(map_lgl_new(stuff, function(x) x > 0), map_lgl)
 
 }
 \seealso{
-[is.output.same()]
+\code{\link{is.output.same}}
 }

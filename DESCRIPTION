@@ -1,6 +1,6 @@
 Package: frite
 Type: Package
-Title: Functions Writing Functions
+Title: Functions for Modifiying and Writing Functions
 Version: 0.1.0
 Authors@r: person("Christopher", "Peralta", email = "chris99994@gmail.com",
                   role = c("aut", "cre"))
@@ -11,12 +11,16 @@ Description: This package provides functions that can be used to modify existing
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Imports: 
+Imports:
     assertthat (>= 0.2.0),
     magrittr (>= 1.5.0),
     purrr (>= 0.2.4), 
-    tictoc (>= 1.0.0)
-Depends: 
+    tictoc (>= 1.0.0), 
+    stringr (>= 1.3.0)
+Depends:
     R (>= 3.5.0)
 BugReports: https://github.com/visuelledata/frite/issues
 RoxygenNote: 6.0.1
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr

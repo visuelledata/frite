@@ -8,7 +8,7 @@
 #'
 #' @return function
 #'
-#' @seealso [list_body()]
+#' @seealso \code{\link{list_body}}
 #'
 #' @examples
 #'
