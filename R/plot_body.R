@@ -39,12 +39,14 @@ plot_body <- function(.f, nudge_y = 0, font_size = .8, line_width = 110) {
     stringr::str_c(collapse = "\n")
 
   if (stringr::str_length(list_f) > 2600)
-    warning('All lines may not be plotted, adjust args')
+    warning("All lines may not be plotted, adjust args")
 
   # Plots the title, then body
   text(-.15, 1.15 - nudge_y,
-       labels = paste0(substitute(.f), "()", "'s ", "function body"," as a list"),
+       labels = paste0(substitute(.f), "()", "'s ",
+                       "function body"," as a list"),
        pos = 4, xpd = TRUE)
+
   text(x = -.15, y = .4 - nudge_y,
        labels = list_f, cex = font_size,
        pos = 4, xpd = TRUE)

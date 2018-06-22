@@ -1,12 +1,14 @@
 ---
 title: "Getting started with frite"
 author: "Christopher Peralta"
-date: "`r Sys.Date()`"
+date: "Last updated: `r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Vignette Title}
-  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include = FALSE}
@@ -14,39 +16,68 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+
+library(frite)
 ```
-#Introduction
+##Introduction
 
-**frite** is a package that enables us to easily write and modify functions. It can be used to inject, assign, or remove code in a function.  There are also functions that enable you to use this package more easily. You can use the diagnostic functions to test any function that you can think of. 
+**frite** is a package that enables us to easily write and modify functions. It can be used to inject, assign, or remove code in a function.  There are also functions that enable you to use this package more easily. You can use the diagnostic functions to test any function that you can think of. It also has applications in code generation or metaprogramming. 
 
 
-#The functions
+##The functions
 
-Diagnostic
-  * `tictocify` *returns a nearly identical timed version of its input*
-  * `is.output.same` *performs call on multiple functions and sees if they match*
+* Diagnostic <br>
+    * `tictocify` *returns a nearly identical timed version of its input* <br>
+    * `is.output.same` *performs call on multiple functions and sees if they match* 
   
-Modification
-  * `line_assign` *inserts `assign()` into a function*
-  * `line_insert` *inserts code into a function*
-  * `line_remove` *removes code from a function*
-  * `copy_args` *copies the arguments of one function to another*
   
-Helping
-  * `list_body` *converts function body to a list*
-  * `plot_body` *plots `list_body()` so you can inspect the body*
+* Modification <br>
+    * `line_assign` *inserts `assign()` into a function* <br>
+    * `line_insert` *inserts code into a function* <br>
+    * `line_remove` *removes code from a function* <br>
+    * `copy_args` *copies the arguments of one function to another* 
+  
+* Helping <br>
+    * `list_body` *converts function body to a list* <br>
+    * `plot_body` *plots `list_body()` so you can inspect the body*
 
 
+##Diagnostic functions
 
+```{r diagnostic}
+# Defining a new function
+reduce_timed <- tictocify(reduce)
 
-## Figures
-
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
+# Now to test it against the original reduce
+reduce_timed(1:100000, sum, .init = 0) 
+is.output.same(reduce_timed(1:100000, sum, .init = 0), reduce)
 ```
 
+`tictocify` will return a nearly identical timed version of a function. It does this by creating a function call and inserting `tic()`, `toc()`, and a return statement around the call. 
 
+`is.output.same` evaluates the call in the first argument and replaces the function in the first call and re-evaluates it with a new output and checks that they are identical. 
 
+```{r modification}
+# Constructing a different version of reduce_timed
+(reduce_timed1 <- line_insert(reduce, after_line = 1, quote(tic())))
+(reduce_timed1 <- line_assign(reduce_timed1, line = 3, 'value'))
+(reduce_timed1 <- line_insert(reduce_timed1, after_line = 3, quote(toc())))
+(reduce_timed1 <- line_insert(reduce_timed1, after_line = 4, quote(return(value))))
+
+is.output.same(reduce_timed(1:100000, sum, .init = 0), reduce_timed1)
+```
+Note: Everything above can be piped. 
+
+These types of can modifications can be difficult to make sequentially, so there are a couple of helper functions to allow you to see what you're doing. 
+
+```{r helping}
+map_hello <- map %>% 
+  plot_body() %>% # Plots body and returns map
+  line_insert(after_line = 1, quote(print("Hello!")))
+
+list_body(map_hello)
+
+map_hello(list(1, 2, "b"), is.number)
+```
+
+You can read more in the reference manual!
