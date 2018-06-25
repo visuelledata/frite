@@ -7,7 +7,10 @@
 #'
 #' @return A list
 #'
-#' @example
+#' @export
+#'
+#' @examples
+#'
 #' list_body(strwrap)
 #'
 list_body <- function(.f) {

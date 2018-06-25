@@ -1,7 +1,7 @@
 #' Plots the body of a non-primitive function
 #'
 #' Plots the body of a function so that you can easily see it while using other functions
-#' in this package. It is pipeable and will return the function that you put into it.
+#' in this package. It can be piped into and will return the function that you put into it.
 #'
 #' @param .f A function
 #' @param nudge_y Moves the function body up or down, number
@@ -15,6 +15,8 @@
 #'
 #' @seealso \code{\link{list_body}}
 #'
+#' @export
+#'
 #' @examples
 #'
 #' plot_body(map)
@@ -26,6 +28,9 @@ plot_body <- function(.f, nudge_y = 0, font_size = .8, line_width = 110) {
   assert_that(is.function(.f),
               is.number(nudge_y), is.number(font_size), is.number(line_width))
   assert_that(font_size > 0, line_width > 0)
+  if (class(substitute(.f)) == "call") {
+    stop("Functions can't be entered the following way: 'purrr::map'")
+  }
 
   plot.new()
 
@@ -44,7 +49,7 @@ plot_body <- function(.f, nudge_y = 0, font_size = .8, line_width = 110) {
   # Plots the title, then body
   text(-.15, 1.15 - nudge_y,
        labels = paste0(substitute(.f), "()", "'s ",
-                       "function body"," as a list"),
+                       "function body", " as a list"),
        pos = 4, xpd = TRUE)
 
   text(x = -.15, y = .4 - nudge_y,

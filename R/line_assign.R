@@ -11,6 +11,8 @@
 #'
 #' @seealso \code{\link{line_remove}} \code{\link{line_insert}}
 #'
+#' @export
+#'
 #' @examples
 #'
 #' map %>%

@@ -20,7 +20,7 @@ text in plot window, also returns function
 }
 \description{
 Plots the body of a function so that you can easily see it while using other functions
-in this package. It is pipeable and will return the function that you put into it.
+in this package. It can be piped into and will return the function that you put into it.
 }
 \section{Warning}{
 

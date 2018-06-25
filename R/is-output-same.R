@@ -19,6 +19,8 @@
 #'
 #' @seealso \code{\link{find_call_piped}}
 #'
+#' @export
+#'
 #' @examples
 #'
 #' library(dplyr)

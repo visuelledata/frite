@@ -10,6 +10,8 @@
 #'
 #' @seealso \code{\link{list_body}}
 #'
+#' @export
+#'
 #' @examples
 #'
 #' line_remove(.f = map, line = 2)

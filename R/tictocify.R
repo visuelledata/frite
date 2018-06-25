@@ -15,6 +15,8 @@
 #'
 #' @seealso \code{\link{is.output.same}}
 #'
+#' @export
+#'
 #' @examples
 #'
 #' set.seed(1)
@@ -50,7 +52,7 @@ tictocify <- function(..f, tic_args = NULL, toc_args = NULL) {
     return(x)
   }
 
-  # Makes the arguments of int_f identical to the ..f
+  # Makes the arguments of int_f identical to the ..f arguments
   formals(int_f) <- formals(..f)
   return(int_f)
 }

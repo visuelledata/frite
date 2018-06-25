@@ -1,6 +1,6 @@
 ---
 title: "frite"
-output: html_document
+output: md_document
 ---
 
 ```{r setup, include=FALSE}
@@ -38,6 +38,7 @@ Or you can install it from github:
 
 `devtools::install_github("visuelledata/frite")`
 
+<br>
 See the getting started vignette for more!
 
 

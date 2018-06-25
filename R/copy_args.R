@@ -10,6 +10,8 @@
 #'
 #' @seealso See \code{\link{tictocify}} function body for a use case.
 #'
+#' @export
+#'
 
 
 copy_args <- function(from, to) {

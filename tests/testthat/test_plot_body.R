@@ -5,10 +5,14 @@ test_that("plot_body returns a function", {
 })
 
 test_that("plot_body gives errors for primitive functions", {
-  expect_error(plot_body(sum)),
+  expect_error(plot_body(sum))
   expect_error(plot_body(round))
 })
 
 test_that("plot_body gives warnings for long functions", {
   expect_warning(plot_body(data.frame))
+})
+
+test_that("plot_body gives error when used with  :: operator", {
+  expect_error(plot_body(purrr::map))
 })
