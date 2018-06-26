@@ -1,6 +1,9 @@
 frite
 -----
 
+[![Travis-CI Build
+Status](https://travis-ci.org/visuelledata/frite.svg?branch=master)](https://travis-ci.org/visuelledata/frite)
+
 `frite` is a package that provides tools to modify and write functions.
 It can also aid in code generation or metaprogramming. Or you can just
 use the diagnostic functions for code refactoring.
