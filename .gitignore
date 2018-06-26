@@ -4,4 +4,3 @@
 .Ruserdata
 inst/doc
 cran-comments.Rmd
-.travis.yml
