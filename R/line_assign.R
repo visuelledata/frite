@@ -15,9 +15,8 @@
 #'
 #' @examples
 #'
-#' map %>%
-#'   line_assign(line = 2, assign_to = 'abc') %>%
-#'   line_insert(after_line = 3, quote(return(abc)))
+#' new_map <- line_assign(strwidth, line = 3, assign_to = 'abc')
+#' line_insert(new_map, after_line = 4, quote(return(abc)))
 #'
 #'
 line_assign <- function(.f, line, assign_to){

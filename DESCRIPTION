@@ -2,8 +2,8 @@ Package: frite
 Type: Package
 Title: Functions for Modifying and Writing Functions
 Version: 0.1.0
-Authors@r: person("Christopher", "Peralta", email = "chris99994@gmail.com",
-                  role = c("aut", "cre"))
+Author: Christopher Peralta [aut, cre]
+Maintainer: Christopher Peralta <chris99994@gmail.com>
 Description: This package provides functions that can be used to modify existing functions
     and write new functions with code. It contains functions for adding, removing, 
     and editing code in functions. Additionally, it contains diagnostic functions to test 

@@ -25,6 +25,12 @@
 #'
 #' \code{\link{is.args.same}}
 #'
+#' @importFrom assertthat assert_that
+#' @importFrom magrittr %>%
+#' @importFrom purrr map
+#' @importFrom purrr map_lgl
+#' @importFrom purrr map2
+#'
 #' @docType package
 #' @name frite
 NULL

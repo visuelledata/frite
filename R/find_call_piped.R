@@ -10,12 +10,6 @@
 #'
 #' @return call
 #'
-#' @examples
-#' sum(1:3) %>%
-#'   identity() %>%
-#'   is.na() %>%
-#'   find_call_piped()
-#'
 
 find_call_piped <- function(.piped) {
 

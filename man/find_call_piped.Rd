@@ -19,10 +19,3 @@ function that receives code rather than a value. You can put it as the first lin
 your function to enable code to be piped. However, this defeats the purpose of the pipe and
 can cause confusion for someone looking at your code.
 }
-\examples{
-sum(1:3) \%>\%
-  identity() \%>\%
-  is.na() \%>\%
-  find_call_piped()
-
-}

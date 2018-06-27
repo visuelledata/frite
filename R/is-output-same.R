@@ -23,14 +23,10 @@
 #'
 #' @examples
 #'
-#' library(dplyr)
-#' is.output.same(map(1:3, cumsum), lapply) # TRUE
+#' is.output.same(purrr::map(1:3, cumsum), lapply) # TRUE
 #' is.output.same(cumsum(1:3), cumprod)     # FALSE
 #' is.output.same(sum(1:3), prod)           # FALSE for outputs of different class
-#' subset(iris, Sepal.Width < 5) %>%        # Pipeable
-#'   is.output.same(filter)
-#' mean(1:3) %>%                            # FALSE
-#'   is.output.same(median)
+#' is.output.same(mean(1:3), prod)          # FALSE
 #'
 
 is.output.same <- function(.call, ..., quiet = FALSE) {
