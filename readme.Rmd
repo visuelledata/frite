@@ -34,7 +34,7 @@ You can install `frite` from cran:
 
 `install.packages("frite")`
 
-Or you can install it from github: 
+Or you can install the development version from github: 
 
 `install.packages("devtools")`
 

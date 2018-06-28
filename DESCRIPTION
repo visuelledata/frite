@@ -1,13 +1,12 @@
 Type: Package
 Package: frite
-Title: Functions for Modifying and Writing Functions
+Title: Functions Writing Functions
 Version: 0.1.0
 Author: Christopher Peralta [aut, cre]
 Maintainer: Christopher Peralta <chris99994@gmail.com>
-Description: This package provides functions that can be used to modify existing functions
-    and write new functions with code. It contains functions for adding, removing, 
-    and editing code in functions. Additionally, it contains diagnostic functions to test 
-    your code. 
+Description: Tools for writing and modifying functions with code. It contains functions 
+    for adding, removing, and editing code in functions. Additionally, it contains 
+    diagnostic functions to test your code. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
