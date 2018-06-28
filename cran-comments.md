@@ -1,5 +1,5 @@
-## Release summary
-This is initial release of the frite package. 
+## Submission notes
+* This is the initial release of the frite package.
 
 ## Test environments
 * local Windows 10 install, R 3.5.0
@@ -9,11 +9,9 @@ This is initial release of the frite package.
 
 
 ## R CMD check results
-There were no ERRORs or WARNINGs. 
+There were no NOTEs, ERRORs, or WARNINGs. 
 
-There was 1 note from win-builder: 
 
-* Package has a VignetteBuilder field but no prebuilt vignette index.
 
 ## Downstream dependencies
 There are currently no downstream dependencies.

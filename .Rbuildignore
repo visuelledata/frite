@@ -6,5 +6,4 @@
 ^README\.md$
 ^docs$
 ^doc$
-^vignettes/getting-started\.Rmd$
 ^vignettes/getting-started_files/figure-html/helping-1\.png$

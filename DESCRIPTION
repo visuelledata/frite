@@ -22,7 +22,7 @@ Suggests:
     knitr,
     rmarkdown,
     testthat
-VignetteBuilder: rmarkdown
+VignetteBuilder: knitr
 URL: https://github.com/visuelledata/frite
 BugReports: https://github.com/visuelledata/frite/issues
 RoxygenNote: 6.0.1
