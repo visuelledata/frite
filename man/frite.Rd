@@ -32,7 +32,5 @@ modifying functions, and diagnostic functions.
 \code{\link{tictocify}}
 
 \code{\link{is.output.same}}
-
-\code{\link{is.args.same}}
 }
 

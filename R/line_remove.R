@@ -1,7 +1,7 @@
 #' Removes an expression from a function body
 #'
-#' This function will remove an expression from the function body. Use list_body() on any
-#' function to see which lines are able to be removed.
+#' This function will remove an expression from the function body. Use list_body() or
+#' plot_body on any function to see which lines are able to be removed.
 #'
 #' @param .f A non-primitive function
 #' @param line An expression from the body of the function
@@ -14,8 +14,8 @@
 #'
 #' @examples
 #'
-#' line_remove(.f = map, line = 2)
-#' line_remove(.f = map, line = 3)
+#' line_remove(.f = purrr::map, line = 2)
+#' line_remove(.f = purrr::map, line = 3)
 #'
 line_remove <- function(.f, line) {
 

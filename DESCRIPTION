@@ -1,5 +1,5 @@
-Package: frite
 Type: Package
+Package: frite
 Title: Functions for Modifying and Writing Functions
 Version: 0.1.0
 Author: Christopher Peralta [aut, cre]
@@ -23,7 +23,7 @@ Suggests:
     knitr,
     rmarkdown,
     testthat
-VignetteBuilder: knitr
+VignetteBuilder: rmarkdown
 URL: https://github.com/visuelledata/frite
 BugReports: https://github.com/visuelledata/frite/issues
 RoxygenNote: 6.0.1

@@ -13,9 +13,9 @@ find_call_piped(.piped)
 call
 }
 \description{
-This is a function that receives a value through a pipe, then traces it through the stack to
-find the original pipe call and extract it. The use case for this is when you want to write a
-function that receives code rather than a value. You can put it as the first line of code in
-your function to enable code to be piped. However, this defeats the purpose of the pipe and
-can cause confusion for someone looking at your code.
+This function that receives a value through a pipe, then traces it through the stack to
+find the original pipe call and returns it. The usage for this is when you want to write
+a function that receives code rather than a value. You can put it as the first line of code
+in your function to enable code to be piped. However, this defeats the purpose of the pipe
+and can cause confusion for someone looking at your code.
 }

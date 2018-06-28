@@ -4,7 +4,7 @@ author: "By Christopher Peralta"
 date: "Last updated: `r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Getting started with frite}
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{rmarkdown::render}
 editor_options: 

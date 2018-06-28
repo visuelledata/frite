@@ -6,7 +6,7 @@
 #' @param .f A function
 #' @param nudge_y Moves the function body up or down, number
 #' @param font_size Specifies text size, positive number
-#' @param line_width Specifies the line width, positive number
+#' @param line_width Specifies how wide a line can be, positive number
 #'
 #' @section Warning:
 #' Functions with large bodies will be difficult to plot correctly
@@ -19,8 +19,8 @@
 #'
 #' @examples
 #'
-#' plot_body(map)
-#' plot_body(cross)
+#' plot_body(lapply)
+#' plot_body(strwrap, line_width = 90, font_size = .75, nudge_y = .12)
 #'
 plot_body <- function(.f, nudge_y = 0, font_size = .8, line_width = 110) {
 
@@ -32,7 +32,7 @@ plot_body <- function(.f, nudge_y = 0, font_size = .8, line_width = 110) {
     stop("Functions can't be entered the following way: 'purrr::map'")
   }
 
-  plot.new()
+  graphics::plot.new()
 
   # Formats the function body to be plottable
   list_f <- .f %>%
@@ -47,14 +47,14 @@ plot_body <- function(.f, nudge_y = 0, font_size = .8, line_width = 110) {
     warning("All lines may not be plotted, adjust args")
 
   # Plots the title, then body
-  text(-.15, 1.15 - nudge_y,
-       labels = paste0(substitute(.f), "()", "'s ",
-                       "function body", " as a list"),
-       pos = 4, xpd = TRUE)
+  graphics::text(-.15, 1.15,
+                 labels = paste0(substitute(.f), "()", "'s ",
+                                 "function body", " as a list"),
+                 pos = 4, xpd = TRUE)
 
-  text(x = -.15, y = .4 - nudge_y,
-       labels = list_f, cex = font_size,
-       pos = 4, xpd = TRUE)
+  graphics::text(x = -.15, y = .4 - nudge_y,
+                 labels = list_f, cex = font_size,
+                 pos = 4, xpd = TRUE)
 
   return(.f)
 }

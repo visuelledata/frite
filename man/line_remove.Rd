@@ -15,13 +15,13 @@ line_remove(.f, line)
 function
 }
 \description{
-This function will remove an expression from the function body. Use list_body() on any
-function to see which lines are able to be removed.
+This function will remove an expression from the function body. Use list_body() or
+plot_body on any function to see which lines are able to be removed.
 }
 \examples{
 
-line_remove(.f = map, line = 2)
-line_remove(.f = map, line = 3)
+line_remove(.f = purrr::map, line = 2)
+line_remove(.f = purrr::map, line = 3)
 
 }
 \seealso{

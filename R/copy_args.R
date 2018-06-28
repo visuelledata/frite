@@ -1,7 +1,6 @@
 #' Copies the arguments of one function to another
 #'
-#' You can use this when you want to create a function very similar to the original and
-#' retroactively define the arguments.
+#' Copies the arguments of  one function, "from", to "to".
 #'
 #' @param from A function with the arguments to copy
 #' @param to A function to receive new arguments

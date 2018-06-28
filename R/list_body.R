@@ -1,7 +1,7 @@
 #' Converts the body of a function to a list
 #'
-#' This allows for easy modification of functions and will help you see what code you are
-#' changing when using other functions in this package.
+#' This will help you see what code you're changing when using other functions in this
+#' package.
 #'
 #' @param .f A non-primitive function
 #'

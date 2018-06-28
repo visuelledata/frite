@@ -21,7 +21,7 @@ Inserts code wrapped in the quote function into a function after the specified l
 }
 \examples{
 
-map_hello <- line_insert(map, 1, quote(print('Hello!')))
+lapply_hello <- line_insert(lapply, 1, quote(print('Hello!')))
 
 }
 \seealso{

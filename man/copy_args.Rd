@@ -15,8 +15,7 @@ copy_args(from, to)
 function
 }
 \description{
-You can use this when you want to create a function very similar to the original and
-retroactively define the arguments.
+Copies the arguments of  one function, "from", to "to".
 }
 \seealso{
 See \code{\link{tictocify}} function body for a use case.

@@ -1,19 +1,19 @@
-#' Checks if the arguments in .call will produce identical output in other functions
+#' Checks if functions will produce identical output
 #'
-#' The use for this is to evaluate your code, while you're cleaning your functions. You
-#' can have a function call as the first argument and the name of the cleaned function
-#' as the second argument, then it will evaluate the functions with identical arguments
-#' and see if the output is identical.
+#' The use for this is to evaluate your code while you're cleaning your functions. You
+#' can have a function call as the first argument and the name of another function as
+#' the second argument, then it will evaluate the functions with the arguments of the
+#' call and see if the output is identical.
 #'
-#' @param .call Function call, such as '.call = my_function(x = 1:3)
+#' @param .call Function call, such as ".call = my_function(x = 1:3)"
 #' @param ...   One or more function names
 #' @param quiet Optional warning suppression
 #'
-#' @details Use only in pipe chains with a length of one, or it will evaluate up to the
-#'  top of the chain. Also it's not recommended to use pipes with this function, as it
-#'  undoes what the pipe is intended to do. If you don't pipe in .call, then the function
-#'  operates off the fact that calls given inside of function calls function are promises,
-#'  allowing the code to be wrapped in substitute() within the function.
+#' @details Use only in pipe chains with a length of one, or it will use the code at the
+#'  top of the pipe-chain. Also it's not recommended to use pipes with this function, as
+#'  it undoes the evaluation of prior code in the pipe. If you don't pipe in .call, then
+#'  the function operates off the fact that a call given as an argument is treated as a
+#'  promise, allowing the code to be wrapped in substitute() inside the function.
 #'
 #' @return logical - TRUE if outputs are identical
 #'

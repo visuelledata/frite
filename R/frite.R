@@ -23,14 +23,19 @@
 #'
 #' \code{\link{is.output.same}}
 #'
-#' \code{\link{is.args.same}}
-#'
 #' @importFrom assertthat assert_that
+#' @importFrom assertthat is.number
 #' @importFrom magrittr %>%
+#' @importFrom purrr is_scalar_character
 #' @importFrom purrr map
 #' @importFrom purrr map_lgl
 #' @importFrom purrr map2
+#' @importFrom tictoc tic
+#' @importFrom tictoc toc
 #'
 #' @docType package
 #' @name frite
 NULL
+
+# Supresses note of R CMD check 'the .'s that appear in pipelines'
+if (getRversion() >= "2.15.1")  utils::globalVariables(c("."))

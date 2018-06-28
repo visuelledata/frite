@@ -13,7 +13,7 @@ plot_body(.f, nudge_y = 0, font_size = 0.8, line_width = 110)
 
 \item{font_size}{Specifies text size, positive number}
 
-\item{line_width}{Specifies the line width, positive number}
+\item{line_width}{Specifies how wide a line can be, positive number}
 }
 \value{
 text in plot window, also returns function
@@ -29,8 +29,8 @@ Functions with large bodies will be difficult to plot correctly
 
 \examples{
 
-plot_body(map)
-plot_body(cross)
+plot_body(lapply)
+plot_body(strwrap, line_width = 90, font_size = .75, nudge_y = .12)
 
 }
 \seealso{

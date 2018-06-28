@@ -13,8 +13,8 @@ list_body(.f)
 A list
 }
 \description{
-This allows for easy modification of functions and will help you see what code you are
-changing when using other functions in this package.
+This will help you see what code you're changing when using other functions in this
+package.
 }
 \examples{
 
