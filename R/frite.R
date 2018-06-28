@@ -37,5 +37,5 @@
 #' @name frite
 NULL
 
-# Supresses note of R CMD check 'the .'s that appear in pipelines'
+# Supresses note of R CMD check regarding "."
 if (getRversion() >= "2.15.1")  utils::globalVariables(c("."))
