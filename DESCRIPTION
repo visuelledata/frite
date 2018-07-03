@@ -1,7 +1,7 @@
 Type: Package
 Package: frite
 Title: Functions Writing Functions
-Version: 0.1.0
+Version: 0.1.0.9000
 Author: Christopher Peralta [aut, cre]
 Maintainer: Christopher Peralta <chris99994@gmail.com>
 Description: Tools for writing and modifying functions with code. It contains functions 

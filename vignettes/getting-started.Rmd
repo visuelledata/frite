@@ -75,7 +75,7 @@ is.output.same(reduce_timed(1:100000, sum, .init = 0), reduce_timed1)
 ```
 Note: Everything above can be piped. 
 
-These types of can modifications can be difficult to make sequentially, so there are a couple of helper functions to allow you to see what you're doing. 
+These types of modifications can be difficult to make sequentially, so there are a couple of helper functions to allow you to see what you're doing. 
 
 ```{r helping, fig.width = 4, fig.height=3}
 plot_body(map)

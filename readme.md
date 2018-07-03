@@ -3,6 +3,9 @@ frite
 
 [![Travis-CI Build
 Status](https://travis-ci.org/visuelledata/frite.svg?branch=master)](https://travis-ci.org/visuelledata/frite)
+[![](https://cranlogs.r-pkg.org/badges/frite)](https://cran.r-project.org/package=frite)
+[![CRAN Status
+Badge](http://www.r-pkg.org/badges/version/frite)](https://cran.r-project.org/package=frite)
 
 `frite` is a package that provides tools to modify and write functions.
 It can also aid in code generation or metaprogramming. Or you can just

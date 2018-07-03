@@ -69,7 +69,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Getting started with frite</h1>
 <h4 class="author"><em>By Christopher Peralta</em></h4>
-<h4 class="date"><em>Last updated: 2018-06-25</em></h4>
+<h4 class="date"><em>Last updated: 2018-07-03</em></h4>
 
 
 
@@ -106,11 +106,11 @@ reduce_timed &lt;-<span class="st"> </span><span class="kw">tictocify</span>(red
 
 <span class="co"># Now to test it against the original reduce</span>
 <span class="kw">reduce_timed</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000</span>, sum, <span class="dt">.init =</span> <span class="dv">0</span>) 
-<span class="co">#&gt; 0.2 sec elapsed</span>
+<span class="co">#&gt; 0.28 sec elapsed</span>
 <span class="co">#&gt; [1] 5000050000</span>
 
 <span class="kw">is.output.same</span>(<span class="kw">reduce_timed</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000</span>, sum, <span class="dt">.init =</span> <span class="dv">0</span>), reduce)
-<span class="co">#&gt; 0.18 sec elapsed</span>
+<span class="co">#&gt; 0.17 sec elapsed</span>
 <span class="co">#&gt; [1] TRUE</span></code></pre></div>
 <p><code>tictocify</code> will return a nearly identical timed version of a function. It does this by creating a function call and inserting <code>tic()</code>, <code>toc()</code>, and a return statement around the call.</p>
 <p><code>is.output.same</code> evaluates the call in the first argument and replaces the function in the first call and re-evaluates it with a new output and checks that they are identical.</p>
@@ -152,11 +152,11 @@ reduce_timed &lt;-<span class="st"> </span><span class="kw">tictocify</span>(red
 <span class="co">#&gt; &lt;environment: namespace:purrr&gt;</span>
 
 <span class="kw">is.output.same</span>(<span class="kw">reduce_timed</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000</span>, sum, <span class="dt">.init =</span> <span class="dv">0</span>), reduce_timed1)
+<span class="co">#&gt; 0.21 sec elapsed</span>
 <span class="co">#&gt; 0.16 sec elapsed</span>
-<span class="co">#&gt; 0.12 sec elapsed</span>
 <span class="co">#&gt; [1] TRUE</span></code></pre></div>
 <p>Note: Everything above can be piped.</p>
-<p>These types of can modifications can be difficult to make sequentially, so there are a couple of helper functions to allow you to see what you’re doing.</p>
+<p>These types of modifications can be difficult to make sequentially, so there are a couple of helper functions to allow you to see what you’re doing.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot_body</span>(map)</code></pre></div>
 <p><img src="data:image/png;base64,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" /><!-- --></p>
 <pre><code>#&gt; function (.x, .f, ...) 
@@ -164,7 +164,7 @@ reduce_timed &lt;-<span class="st"> </span><span class="kw">tictocify</span>(red
 #&gt;     .f &lt;- as_mapper(.f, ...)
 #&gt;     .Call(map_impl, environment(), &quot;.x&quot;, &quot;.f&quot;, &quot;list&quot;)
 #&gt; }
-#&gt; &lt;bytecode: 0x00000000044a1e90&gt;
+#&gt; &lt;bytecode: 0x0000000003237d08&gt;
 #&gt; &lt;environment: namespace:purrr&gt;
 
 
@@ -184,7 +184,7 @@ list_body(map_hello)
 #&gt; [[4]]
 #&gt; .Call(map_impl, environment(), &quot;.x&quot;, &quot;.f&quot;, &quot;list&quot;)
 
-map_hello(list(1, 2, &quot;b&quot;), is.number)
+map_hello(list(1, 2, &quot;b&quot;), assertthat::is.number)
 #&gt; [1] &quot;Hello!&quot;
 #&gt; [[1]]
 #&gt; [1] TRUE
